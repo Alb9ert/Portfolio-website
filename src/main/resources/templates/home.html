@@ -5,21 +5,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AAB Portfolio</title>
+
 </head>
 
 <body>
     <div id="navDiv">
         <ul>
-            <li><a href="https://github.com/Alb9ert"><img id="github" src="/styles/images/GITHUB.webp" alt="Github logo"></a>
-            </li>
+            <li><a href="https://github.com/Alb9ert"><img id="github" src="/styles/images/GITHUB.webp" alt="Github logo"></a></li>
             <li id="myProjects"><a href="/">My Projects</a></li>
-
         </ul>
     </div>
 
+    <div id="content">
+        <div id="leftDiv">
+            <img id="me" src="/styles/images/me.png" alt="">
+            <div id="smallImages">
+                <a href="https://www.linkedin.com/in/albert-agner-hansen-2a8397244/"><img id="linkedin" src="/styles/images/linkedin.png" alt=""></a>
+                <a href="https://github.com/Alb9ert"><img id="githubSmall" src="/styles/images/GITHUB-LOGO.png" alt=""></a>
+            </div>
+            
+                <h3 id="hi">Hi! My name is Albert</h3>
+            <div id="textBox">
+                <p>I'm a software engineering student based in Denmark. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error laboriosam eos quam soluta nihil illum aut minima ipsa vitae, et, ratione nostrum repellat sapiente odit, eum eveniet corporis ex.</p>
+            </div>
+        </div>
+
+        <div id="slideshow">
+            
+            <div class="slides">
+                <div class="slide"><img src="/styles/images/minesweeper.png" alt="Image 1"></div>
+                <div class="slide"><img src="/styles/images/expensia.png" alt="Image 2"></div>
+            </div>
+            <button class="nav prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="nav next" onclick="changeSlide(1)">&#10095;</button>
+            <div class="dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let currentIndex = 0;
+        const totalSlides = 2; // Update this if more slides are added
+
+        // Function to change slide based on direction
+        function changeSlide(direction) {
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides; // Wrap around the number of slides
+            updateSlides();
+        }
+
+        // Function to go to the specific slide
+        function currentSlide(index) {
+            currentIndex = index;
+            updateSlides();
+        }
+
+        // Function to update slides and dots
+        function updateSlides() {
+            const slides = document.querySelector('.slides');
+            slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Automatic slide change every 6 seconds
+        setInterval(() => {
+            changeSlide(1); // Change to the next slide
+        }, 4000); // 6000 milliseconds = 6 seconds
+
+        // Initial call to update slides
+        updateSlides();
+    </script>
+
     <link rel="stylesheet" href="/styles/home.css">
     <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
-
 </body>
 
 </html>
