@@ -1,5 +1,11 @@
-html, body {
+
+
+html,
+body {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
 }
 
 ul {
@@ -8,36 +14,146 @@ ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
+}
 
+#projectHeader {
+    font-weight: normal;
+    font-size: 19px;
+    margin-left: 30px;
 
-  }
-  
-  li a {
-    font-family: 'Helvetica Neue', sans-serif;
+}
+
+li a {
     color: black;
     font-size: 18px;
 
     text-decoration: none;
-  }
-  
-  /* Change the link color on hover */
-  li a:hover {
-    color: rgb(83, 83, 83);
+}
 
-
-
-  }
+/* Change the link color on hover */
+li a:hover {
+    color: rgb(64, 145, 216);
+}
 
 #navDiv {
     width: 100%;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
-  }
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+}
 
-  #github {
+#github {
     width: 225px;
-  }
+}
 
-  #myProjects {
+#myProjects {
     margin-top: 48px;
     margin-left: 40px;
-  }
+}
+
+#slideshow {
+    position: relative;
+    max-width: 900px; /* Set desired width for slideshow */
+    height: 100%; /* Set desired height for slideshow */
+    overflow: hidden;
+    margin-right: 80px;
+    margin-top: 40px; /* Push slideshow to the right */
+
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s;
+}
+
+#content {
+    display: flex; /* Flexbox for content layout */
+    flex: 1; /* Allow it to take remaining space */
+    margin-top: 80px;
+}
+
+#leftDiv {
+    flex: 1; /* Left div takes remaining space */
+    /* Optionally add background color or padding */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.slide {
+    min-width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(64, 145, 216);
+}
+
+#smallImages {
+
+    flex-direction: row;
+    margin-top: 10px;
+
+}
+
+#linkedin {
+    width: 30px;
+}
+
+#githubSmall {
+    width: 30px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    border-radius: 50%;
+    background: rgb(222, 222, 222);
+    cursor: pointer;
+}
+
+.active {
+    background: rgb(64, 145, 216);
+}
+
+#me {
+    border-radius: 50%;
+    width: 350px;
+    border: 2px solid;
+
+
+}
+
+#hi {
+    font-weight: normal;
+}
+
+#textBox {
+    width: 400px;
+}
+
